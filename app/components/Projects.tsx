@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { TextPlugin } from 'gsap/TextPlugin';
 import Image from 'next/image';
 import Button from './MouseButton';
+import FlipLink from './Fliptext';
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
@@ -158,11 +159,9 @@ export default function ProjectsDisplay() {
       {/* Background 'PROJECTS' text */}
       <div className="absolute inset-0 flex flex-col justify-center items-center z-0 pointer-events-none select-none py-8 px-6">
         <div className='w-full flex flex-col'>
-          <h1 
-            className="font-mont text-7xl font-bold tracking-tight leading-none text-white"
-          >
+          <FlipLink>
             SELECTED WORKS
-          </h1>
+          </FlipLink>
         </div>
         <div className='h-full justify-center items-center flex'>
           <Button/>

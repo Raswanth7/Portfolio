@@ -1,11 +1,12 @@
 'use client'
 import { useRef } from 'react'
 import { useMotionValue, motion, useSpring, useTransform } from "framer-motion";
+import FlipLink from './Fliptext';
 const Hackathon = () => {
   return (
     <div className='py-8 px-6'>
         <div className='flex flex-col gap-1'>
-            <h1 className='text-7xl font-mont font-bold text-white'>JOURNEY</h1>
+            <FlipLink>JOURNEY</FlipLink>
         </div>
         <section className="py-8">
       <div className="mx-auto max-w-7xl">

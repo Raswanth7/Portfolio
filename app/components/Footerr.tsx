@@ -9,7 +9,7 @@ export default function Footer() {
     style={{clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)"}}
   >
     <div className="fixed bottom-0 w-full h-[600px]">
-      <div className="bg-[#FAF9F6] h-full w-full flex flex-col justify-between items-center pt-4">
+      <div className="bg-blue-700 h-full w-full flex flex-col justify-between items-center pt-4">
         <div className='flex flex-row w-full px-8 pt-8'>
         <div className='flex flex-col w-full'>
           <h1 className='text-8xl font-mont font-semibold text-black'>Let's Make It</h1>
@@ -21,19 +21,19 @@ export default function Footer() {
             <h1 className='text-[#ECECEC] font-mont font-semibold text-2xl p-4'>START A CONVERSATION</h1>
           </div>
           <div className='flex flex-row gap-8 px-4'>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-pink-500 transition">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-black transition">
             <Instagram size={32} strokeWidth={1.5} />
           </a>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-800 transition">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-black transition">
             <Github size={32} strokeWidth={1.5} />
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 transition">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-black transition">
             <Linkedin size={32} strokeWidth={1.5} />
           </a>
           </div>
         </div>
         </div>
-          <Marquee repeat={5}>
+          <Marquee repeat={5} className='border-t-1 border-black'>
           <h1 className="text-9xl font-bold text-black stroke-white">RASWANTH</h1>
           <h1> </h1>
           </Marquee>
