@@ -2,14 +2,70 @@ import React from 'react'
 import { WobbleCard } from '@/components/ui/wobble-card'
 import { div } from 'framer-motion/client'
 import FlipLink from './Fliptext'
+import { Marquee } from '@/components/magicui/marquee'
+import Image from 'next/image'
 
 export const Services = () => {
+  interface Skill {
+    name: string;
+    level: 'Expert' | 'Advanced' | 'Intermediate';
+    icon: string;
+  }
+
+  interface Category {
+    title: string;
+    description: string;
+    skills: Skill[];
+    symbol: string;
+  }
+
+  const categories: Record<string, Category> = {
+    frontend: {
+      title: "Frontend",
+      symbol: '</>',
+      description: "Creating responsive, intuitive interfaces with modern frameworks and tools.",
+      skills: [
+        { name: "React", level: "Expert", icon: "react.png" },
+        { name: "React Native", level: "Expert", icon: "react.png" },
+        { name: "Next.js", level: "Advanced", icon: "nextjs.png" },
+        { name: "JavaScript", level: "Expert", icon: "js.png" },
+        { name: "TypeScript", level: "Advanced", icon: "Ts.png" },
+        { name: "HTML", level: "Expert", icon: "html.png" },
+        { name: "CSS", level: "Expert", icon: "css3.png" },
+        { name: "Tailwind CSS", level: "Advanced", icon: "tailwind.png" }
+      ]
+    },
+    backend: {
+      title: "Backend",
+      symbol: '{ }',
+      description: "Building robust, scalable server-side solutions and APIs.",
+      skills: [
+        { name: "Node.js", level: "Advanced", icon: "node.png" },
+        { name: "Express", level: "Advanced", icon: "express.png" },
+        { name: "MongoDB", level: "Intermediate", icon: "mongodb.png" },
+        { name: "PostgreSQL", level: "Intermediate", icon: "sql.png" },
+        { name: "Supabase", level: "Advanced", icon: "supabase.png" },
+      ]
+    },
+    tools: {
+      title: "Tools & Methods",
+      symbol: '#',
+      description: "Leveraging industry-standard practices and workflows for efficient development.",
+      skills: [
+        { name: "Git/GitHub", level: "Expert", icon: "git.png" },
+        { name: "Figma", level: "Advanced", icon: "figma.png" },
+        { name: "PuTTY", level: "Intermediate", icon: "putty.png" },
+        { name: "AWS", level: "Intermediate", icon: "aws.png" },
+        { name: "Vercel", level: "Advanced", icon: "vercel.png" }
+      ]
+    }
+  };
   return (
-    <div className='px-6 py-10 pb-20'>
+    <div className='px-8 py-10 pb-20'>
         <div className='pb-12'>
             <FlipLink>SERVICES</FlipLink>
         </div>
-    <div className="flex flex-row gap-4 max-w-7xl mx-auto w-full">
+    <div className="flex flex-row gap-6 max-w-7xl mx-auto w-full">
     <WobbleCard
       containerClassName="col-span-1 lg:col-span-2 h-full bg-blue-700 min-h-[500px] lg:min-h-[300px]"
       className=""
@@ -37,11 +93,11 @@ export const Services = () => {
         </h2>
     </div>
       <img
-        src="/assets/Macbook.png"
+        src="/assets/laptop.png"
         width={500}
         height={500}
         alt="linear demo image"
-        className="absolute -right-62 -bottom-7 grayscale filter object-contain rounded-2xl"
+        className="absolute -right-64 -bottom-7 grayscale filter object-contain rounded-2xl"
       />
     </WobbleCard>
     <WobbleCard
@@ -54,14 +110,44 @@ export const Services = () => {
         </h2>
       </div>
       <img
-        src="/assets/Mobileframe.png"
-        width={200}
-        height={200}
+        src="/assets/cloudd.png"
+        width={550}
+        height={550}
         alt="linear demo image"
-        className="absolute -right-20 -bottom-50 grayscale filter object-contain rounded-2xl"
+        className="absolute -right-64 -bottom-7 grayscale filter object-contain rounded-2xl"
       />
     </WobbleCard>
   </div>
+  {/* <div className="space-y-4 mt-10">
+    <Marquee className="rounded-lg py-2">
+      {[
+        "react.png", "nextjs.png", "js.png", "Ts.png", "html.png", "css3.png", "tailwind.png", "node.png", "express.png"
+      ].map((logo, idx) => (
+        <Image
+          key={logo}
+          src={`/assets/logos/${logo}`}
+          alt={logo.replace(/\..+$/, "").toUpperCase()}
+          width={1920}
+          height={1080}
+          className="mx-6 w-40 h-40 grayscale opacity-20 hover:opacity-100 hover:grayscale-0 transition duration-300"
+        />
+      ))}
+    </Marquee>
+    <Marquee className="rounded-lg py-2">
+      {[
+        "supabase.png", "aws.png", "mongodb.png", "sql.png", "vercel1.png", "git.png", "Gitlogo.png", "figmaa.png", "putty.png"
+      ].map((logo, idx) => (
+        <Image
+          key={logo}
+          src={`/assets/logos/${logo}`}
+          alt={logo.replace(/\..+$/, "").toUpperCase()}
+          width={1920}
+          height={1080}
+          className="mx-6 w-40 h-40 grayscale hover:grayscale-0 transition duration-300"
+        />
+      ))}
+    </Marquee>
+  </div> */}
   </div>
   )
 }

@@ -67,7 +67,7 @@ export default function FlipLink({ children }: FlipLinkProps) {
               ease: "easeInOut",
               delay: STAGGER * i,
             }}
-            className="inline-block text-blue-700 font-mont font-bold"
+            className="inline-block text-blue-700 font-benzin"
             key={i}
           >
             {char === " " ? "\u00A0" : char}

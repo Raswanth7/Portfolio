@@ -28,10 +28,18 @@ const page = () => {
       <Navbar/>
       <Hero/>
       <Myimage/>
-      <About/>
-      <ProjectsDisplay/>
-      <Services/>
-      <Hackathon/>
+      <div id="about">
+        <About/>
+      </div>
+      <div id="projects">
+        <ProjectsDisplay/>
+      </div>
+      <div id="services">
+        <Services/>
+      </div>
+      <div id="journey">
+        <Hackathon/>
+      </div>
       <Footerr/>
     </div>
     <div className={`fixed transition-opacity duration-700 ${showPreloader===false ? 'opacity-100' : 'opacity-0'} z-10 bottom-4 right-2`}>

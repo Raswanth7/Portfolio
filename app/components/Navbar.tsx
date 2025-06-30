@@ -4,7 +4,20 @@ import React, { useState, useEffect } from 'react'
 import { HiMenuAlt2 } from "react-icons/hi";
 import { HiDownload } from "react-icons/hi";
 import { motion, AnimatePresence } from 'framer-motion';
-
+import { IoCloseOutline } from "react-icons/io5";
+import { PiDotsThreeCircleVerticalLight } from "react-icons/pi";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer"
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 const Navbar = () => {
   const [showText, setShowText] = useState(false);
@@ -17,37 +30,42 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className='flex flex-row justify-between items-center w-full py-4 px-5'>
-        <div className=''>
-            <HiMenuAlt2 className='w-8 h-8 cursor-pointer' />
+    <div className='flex flex-row items-center w-full py-4 px-5'>
+      {/* Left: Open to work */}
+      <div className='flex flex-row items-center gap-2 py-1 rounded-2xl flex-1'>
+        <div className='border-1 border-white/30 flex flex-row items-center px-3 py-1 gap-2 rounded-full'>
+        <div className='bg-green-400 w-2 h-2 rounded-full'/>
+        <h1 className='text-sm font-mont text-center'>Open to work</h1>
         </div>
-        <div className='cursor-pointer'>
-          <AnimatePresence mode="wait" initial={false}>
-            {showText ? (
-              <motion.h1
-                key="resume"
-                className="font-mont text-center"
-                initial={{ x: 40, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: -40, opacity: 0 }}
-                transition={{ type: 'spring', stiffness: 400, damping: 30 }}
-              >
-                Resume
-              </motion.h1>
-            ) : (
-              <motion.div
-                key="icon"
-                initial={{ x: -40, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: 40, opacity: 0 }}
-                transition={{ type: 'spring', stiffness: 400, damping: 30 }}
-                className="flex items-center justify-center"
-              >
-                <HiDownload className="w-8 h-8" />
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
+      </div>
+
+      {/* Center: Menu Icon */}
+      <div className='flex justify-center flex-none'>
+        <Drawer>
+          <DrawerTrigger>
+            <HiMenuAlt2 className='w-8 h-8 cursor-pointer'/>
+          </DrawerTrigger>
+          <DrawerContent className='flex flex-col w-full justify-center items-center gap-4'>
+            <DrawerHeader>
+              <DrawerTitle></DrawerTitle>
+            </DrawerHeader>
+            <h1 className='text-7xl text-white/50 hover:text-blue-700 font-benzin'>ABOUT US</h1>
+            <h1 className='text-7xl text-white/50 hover:text-blue-700 font-benzin'>SELECTED WORKS</h1>
+            <h1 className='text-7xl text-white/50 hover:text-blue-700 font-benzin'>SERVICES</h1>
+            <h1 className='text-7xl text-white/50 hover:text-blue-700 font-benzin'>JOURNEY</h1>
+            <DrawerFooter>
+              <DrawerClose>
+                <IoCloseOutline className='w-10 h-10 text-white/50 cursor-pointer hover:text-blue-700'/>
+              </DrawerClose>
+            </DrawerFooter>
+          </DrawerContent>
+        </Drawer>
+      </div>
+
+      {/* Right: Resume */}
+      <div className='flex justify-end flex-1'>
+        <h1 className='font-mont text-center cursor-pointer'>Resume</h1>
+      </div>
     </div>
   )
 }

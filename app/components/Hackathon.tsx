@@ -4,7 +4,7 @@ import { useMotionValue, motion, useSpring, useTransform } from "framer-motion";
 import FlipLink from './Fliptext';
 const Hackathon = () => {
   return (
-    <div className='py-8 px-6'>
+    <div className='py-8 px-8'>
         <div className='flex flex-col gap-1'>
             <FlipLink>JOURNEY</FlipLink>
         </div>

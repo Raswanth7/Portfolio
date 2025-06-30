@@ -62,7 +62,6 @@ const Preloader: React.FC<PreloaderProps> = ({
       const slideTimer = setTimeout(() => {
         setSlideUp(true);
         
-        // Remove component after animation completes
         setTimeout(() => {
           setIsVisible(false);
           if (onComplete) onComplete();
@@ -144,7 +143,7 @@ const Preloader: React.FC<PreloaderProps> = ({
       <div 
         ref={preloaderRef}
         className={`
-          fixed inset-0 w-screen h-screen
+          fixed inset-0 w-screen h-screen bg-[#070707]
           flex items-center justify-center z-50
           transform transition-transform duration-700 ease-out
           ${slideUp ? '-translate-y-full' : 'translate-y-0'}
@@ -157,7 +156,7 @@ const Preloader: React.FC<PreloaderProps> = ({
         <div className="text-center relative">
           <div 
             className={`
-              text-4xl md:text-6xl font-mont font-bold text-blue-700
+              text-4xl md:text-6xl font-benzin text-blue-700
               opacity-0 transform translate-y-5
               min-h-20 md:min-h-24
               flex items-center justify-center
@@ -170,13 +169,13 @@ const Preloader: React.FC<PreloaderProps> = ({
             {currentIndex < greetings.length ? greetings[currentIndex] : ''}
           </div>
           
-          {showDots && (
+          {/* {showDots && (
             <div className="flex justify-center gap-2 mt-10 opacity-0 dots-enter">
               <div className="w-3 h-3 bg-white/80 rounded-full dot-pulse"></div>
               <div className="w-3 h-3 bg-white/80 rounded-full dot-pulse"></div>
               <div className="w-3 h-3 bg-white/80 rounded-full dot-pulse"></div>
             </div>
-          )}
+          )} */}
         </div>
       </div>
     </>

@@ -12,8 +12,8 @@ export default function Footer() {
       <div className="bg-blue-700 h-full w-full flex flex-col justify-between items-center pt-4">
         <div className='flex flex-row w-full px-8 pt-8'>
         <div className='flex flex-col w-full'>
-          <h1 className='text-8xl font-mont font-semibold text-black'>Let's Make It</h1>
-           <h1 className='text-8xl font-mont font-semibold text-black'>Happen Together</h1>
+          <h1 className='text-8xl font-mont font-bold text-black'>Let's Make It</h1>
+           <h1 className='text-8xl font-mont font-bold text-black'>Happen Together</h1>
         </div>
         <div className='justify-end flex flex-col gap-8 pt-8'>
           <p className='font-mont text-xl text-black'>Let's turn your ideas into smart, functional digital experiences.</p>
@@ -34,8 +34,7 @@ export default function Footer() {
         </div>
         </div>
           <Marquee repeat={5} className='border-t-1 border-black'>
-          <h1 className="text-9xl font-bold text-black stroke-white">RASWANTH</h1>
-          <h1> </h1>
+          <h1 className="text-9xl font-benzin font-bold text-black stroke-white px-3">RASWANTH</h1>
           </Marquee>
       </div>
     </div>

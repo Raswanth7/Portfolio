@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import React from 'react'
+import { TextHoverEffect } from '@/components/ui/text-hover-effect';
 
 const hero = [
   {
@@ -61,10 +62,10 @@ const titleVariants = {
 
 const Hero = () => {
   return (
-    <div className='flex justify-center items-center w-full h-full pt-56 pb-20'>
+    <div className='flex justify-center items-center w-full h-full pt-48 pb-20'>
       <div className='flex flex-col justify-center items-center w-full h-full gap-20'>
         <motion.h1
-          className='text-9xl font-bold font-mont cursor-default'
+          className='text-9xl font-benzin cursor-default'
           variants={titleVariants}
           initial='hidden'
           animate='visible'
@@ -96,7 +97,7 @@ const Hero = () => {
                   className='w-10 h-10'
                 />
               </motion.div>
-              <h1 className='text-xl font-mont font-light hover:text-blue-700'>{her.name}</h1>
+              <h1 className='text-xl font-mont font-light hover:text-blue-700 transition duration-300'>{her.name}</h1>
             </div>
           ))}
         </motion.div>
