@@ -65,7 +65,7 @@ const Hero = () => {
     <div className='flex justify-center items-center w-full h-full pt-48 pb-20'>
       <div className='flex flex-col justify-center items-center w-full h-full gap-20'>
         <motion.h1
-          className='text-9xl font-benzin cursor-default'
+          className='text-9xl font-benzin cursor-none'
           variants={titleVariants}
           initial='hidden'
           animate='visible'
@@ -80,7 +80,7 @@ const Hero = () => {
         >
           {hero.map((her, index) => (
             <div
-              className='flex flex-col justify-center items-center cursor-default'
+              className='flex flex-col justify-center items-center cursor-none'
               key={index}
             >
               <motion.div

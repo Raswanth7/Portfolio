@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect, useCallback } from 'react'
 import Hero from './components/Hero'
 import Myimage from './components/Myimage'
 import About from './components/About'
@@ -13,10 +13,29 @@ import { FaArrowCircleUp } from "react-icons/fa";
 import Preloader from './components/Preloader'
 const page = () => {
   const [showPreloader, setShowPreloader] = useState(true);
+  const [isDrawerScrolling, setIsDrawerScrolling] = useState(false);
+  const blurTimeout = useRef<NodeJS.Timeout | null>(null);
 
   const handlePreloaderComplete = () => {
     setShowPreloader(false);
   };
+
+  // Function to trigger blur when scrolling via drawer
+  const triggerDrawerScroll = useCallback((sectionId: string) => {
+    setIsDrawerScrolling(true);
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    if (blurTimeout.current) clearTimeout(blurTimeout.current);
+    blurTimeout.current = setTimeout(() => {
+      setIsDrawerScrolling(false);
+    }, 700); // Adjust duration to match scroll duration
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (blurTimeout.current) clearTimeout(blurTimeout.current);
+    };
+  }, []);
+
   return (
     <>
     <Preloader 
@@ -24,8 +43,8 @@ const page = () => {
          greetings={['வணக்கம்','Hello', 'Hola', 'नमस्ते', 'Bonjour', 'Ciao']}
          duration={1000}
       />
-    <div className={`transition-opacity duration-700 ${showPreloader===false ? 'opacity-100' : 'opacity-0'} relative`}>
-      <Navbar/>
+    <div className={`transition-opacity duration-700 ${showPreloader===false ? 'opacity-100' : 'opacity-0'} relative${isDrawerScrolling ? ' blur-scroll' : ''}`}>
+      <Navbar triggerDrawerScroll={triggerDrawerScroll}/>
       <Hero/>
       <Myimage/>
       <div id="about">

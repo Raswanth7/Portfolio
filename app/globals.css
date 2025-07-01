@@ -143,3 +143,8 @@
 .animate-marquee-vertical {
   animation: marquee-vertical var(--duration, 40s) linear infinite;
 }
+
+.blur-scroll {
+  filter: blur(10px);
+  transition: filter 0.15s cubic-bezier(0.4,0,0.2,1);
+}

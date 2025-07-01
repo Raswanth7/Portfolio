@@ -1,26 +1,29 @@
 'use client'
 import Image from 'next/image'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { HiMenuAlt2 } from "react-icons/hi";
 import { HiDownload } from "react-icons/hi";
 import { motion, AnimatePresence } from 'framer-motion';
 import { IoCloseOutline } from "react-icons/io5";
 import { PiDotsThreeCircleVerticalLight } from "react-icons/pi";
 import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer"
+  CustomDrawer,
+  CustomDrawerContent,
+  CustomDrawerHeader,
+  CustomDrawerFooter,
+  CustomDrawerTitle,
+} from './CustomDrawer';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
-const Navbar = () => {
+interface NavbarProps {
+  triggerDrawerScroll: (sectionId: string) => void;
+}
+
+const Navbar = ({ triggerDrawerScroll }: NavbarProps) => {
   const [showText, setShowText] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const triggerRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -41,30 +44,61 @@ const Navbar = () => {
 
       {/* Center: Menu Icon */}
       <div className='flex justify-center flex-none items-center'>
-        <Drawer>
-          <DrawerTrigger> 
-            <Image src="/assets/R7.png" alt="menu" width={1920} height={1080} className='w-10 h-10 cursor-pointer'/>
-          </DrawerTrigger>
-          <DrawerContent className='flex flex-col w-full justify-center items-center gap-4'>
-            <DrawerHeader>
-              <DrawerTitle></DrawerTitle>
-            </DrawerHeader>
-            <h1 className='text-7xl text-white/50 hover:text-blue-700 font-benzin transition duration-300'>ABOUT US</h1>
-            <h1 className='text-7xl text-white/50 hover:text-blue-700 font-benzin transition duration-300'>SELECTED WORKS</h1>
-            <h1 className='text-7xl text-white/50 hover:text-blue-700 font-benzin transition duration-300'>SERVICES</h1>
-            <h1 className='text-7xl text-white/50 hover:text-blue-700 font-benzin transition duration-300'>JOURNEY</h1>
-            <DrawerFooter>
-              <DrawerClose>
-                <IoCloseOutline className='w-10 h-10 text-white/50 cursor-pointer hover:text-blue-700 transition duration-300'/>
-              </DrawerClose>
-            </DrawerFooter>
-          </DrawerContent>
-        </Drawer>
+        <CustomDrawer
+          trigger={<Image src="/assets/R7.png" alt="menu" width={1920} height={1080} className='w-10 h-10 cursor-pointer' />} 
+          direction="right"
+          className='flex flex-col w-full justify-center items-center gap-4'
+        >
+          {(closeDrawer: () => void, open: boolean) => (
+            <CustomDrawerContent open={open} direction="bottom" className='flex flex-col w-full justify-center items-center gap-4'>
+              {open && (
+                <>
+                  <CustomDrawerHeader>
+                    <CustomDrawerTitle>
+                      <div className='w-36 rounded-4xl h-2 bg-white/20'/>
+                    </CustomDrawerTitle>
+                  </CustomDrawerHeader>
+                  <button
+                    className='text-7xl text-white/50 hover:text-blue-700 font-benzin transition duration-300'
+                    onClick={() => { closeDrawer(); triggerDrawerScroll('about'); }}
+                  >
+                    ABOUT US
+                  </button>
+                  <button
+                    className='text-7xl text-white/50 hover:text-blue-700 font-benzin transition duration-300'
+                    onClick={() => { closeDrawer(); triggerDrawerScroll('projects'); }}
+                  >
+                    SELECTED WORKS
+                  </button>
+                  <button
+                    className='text-7xl text-white/50 hover:text-blue-700 font-benzin transition duration-300'
+                    onClick={() => { closeDrawer(); triggerDrawerScroll('services'); }}
+                  >
+                    SERVICES
+                  </button>
+                  <button
+                    className='text-7xl text-white/50 hover:text-blue-700 font-benzin transition duration-300'
+                    onClick={() => { closeDrawer(); triggerDrawerScroll('journey'); }}
+                  >
+                    JOURNEY
+                  </button>
+                  <CustomDrawerFooter>
+                    <button onClick={closeDrawer}>
+                      <IoCloseOutline className='w-10 h-10 text-white/50 cursor-pointer hover:text-blue-700 transition duration-300'/>
+                    </button>
+                  </CustomDrawerFooter>
+                </>
+              )}
+            </CustomDrawerContent>
+          )}
+        </CustomDrawer>
       </div>
 
-      {/* Right: Resume */}
+
       <div className='flex justify-end flex-1'>
+        <Link href={'/docs/Resume.pdf'} target='_blank'>
         <h1 className='font-mont text-center cursor-pointer'>Resume</h1>
+        </Link>
       </div>
     </div>
   )

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Montserrat } from "next/font/google";
 import "./globals.css";
 import SmoothScrolling from "./components/Smoothscroller";
 import localFont from 'next/font/local'
+import { SmoothCursor } from "@/components/ui/smooth-cursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -50,6 +51,7 @@ export default function RootLayout({
       >
           <SmoothScrolling>
         {children}
+        <SmoothCursor />
         </SmoothScrolling>
       </body>
     </html>
