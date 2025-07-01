@@ -1,6 +1,7 @@
 import React from 'react'
 import { Marquee } from '@/components/magicui/marquee'
 import { Instagram, Linkedin, Github } from 'lucide-react'
+import Link from 'next/link'
 
 export default function Footer() {
   return (
@@ -21,15 +22,15 @@ export default function Footer() {
             <h1 className='text-[#ECECEC] font-mont font-semibold text-2xl p-4'>START A CONVERSATION</h1>
           </div>
           <div className='flex flex-row gap-8 px-4'>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-black transition">
+          <Link href="https://www.instagram.com/rasz7_/" target="_blank"  className="text-black transition">
             <Instagram size={32} strokeWidth={1.5} />
-          </a>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-black transition">
+          </Link>
+          <Link href="https://github.com/Raswanth7" target="_blank"  className="text-black transition">
             <Github size={32} strokeWidth={1.5} />
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-black transition">
+          </Link>
+          <Link href="https://www.linkedin.com/in/raswanth-m-k-705639224/" target="_blank"  className="text-black transition">
             <Linkedin size={32} strokeWidth={1.5} />
-          </a>
+          </Link>
           </div>
         </div>
         </div>

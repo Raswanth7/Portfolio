@@ -2,7 +2,13 @@ import { projects } from '../../components/projectsData';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaLink } from "react-icons/fa";
-
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 
 export default function ProjectDetail({ params }: { params: { id: string } }) {
   const project = projects.find(p => p.id === Number(params.id));
@@ -57,16 +63,25 @@ export default function ProjectDetail({ params }: { params: { id: string } }) {
         </div>
         <a href={project.link} target="_blank" rel="noopener noreferrer" className="inline-block mt-4 px-6 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition">Visit Project</a>
       </div> */}
-      <div>
+       <Carousel className='w-full max-w-7xl'>
+      <CarouselContent>
+        {project.images.map((img, index) => (
+          <CarouselItem key={index}>
+        <div className='border-1 border-white/20 rounded-2xl'>
         <Image
-        src={project.images[0]}
+        src={img}
         alt='project image'
         width={1920}
         height={1080}
         className='rounded-2xl'
         />
       </div>
-      
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
+    </Carousel>
       <div className='flex flex-col w-full h-full px-6'>
       <div className='flex w-full items-center'>
       <div className='flex flex-col gap-1 w-full py-4'>
@@ -85,13 +100,13 @@ export default function ProjectDetail({ params }: { params: { id: string } }) {
         <div className='flex h-full gap-3 items-center'>
         {project.technologies?.map((tech,index)=>{
           return(
-            <div key={index} className='bg-blue-700 p-1 px-2 rounded-full hover:opacity-80 items-center'>
+            <div key={index} className={`${project.bgcolor} p-1 px-2 rounded-full hover:opacity-80 items-center`}>
               <h1 className='font-mont text-center font-semibold'>{tech}</h1>
             </div>
           )
         })}
         </div>
-        <div className='bg-blue-700 px-2 py-1 rounded-md flex flex-row items-center gap-2'>
+        <div className={`${project.bgcolor} px-2 py-1 rounded-md flex flex-row items-center gap-2`}>
           <FaLink />
           <h1 className='font-mont font-semibold'>Visit site</h1>
         </div>

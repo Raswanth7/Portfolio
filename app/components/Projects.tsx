@@ -153,7 +153,7 @@ export default function ProjectsDisplay() {
                         <p className="text-black font-mont text-opacity-95 text-sm">{project.subtitle}</p>
                       </div>
                     </div>
-                    <div className="backdrop-blur-sm rounded-full border border-black/20">
+                    <div className="backdrop-blur-sm rounded-full border-4 border-blue-900">
                       <Image
                         src={project.logo}
                         alt={project.title}
