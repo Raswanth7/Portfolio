@@ -56,10 +56,21 @@ const page = () => {
       <div id="services">
         <Services/>
       </div>
+      {/* <Hero/>
+      <Myimage/>
+      <div id="about">
+        <About/>
+      </div>
+      <div id="projects">
+        <ProjectsDisplay/>
+      </div>
+      <div id="services">
+        <Services/>
+      </div>
       <div id="journey">
         <Hackathon/>
       </div>
-      <Footerr/>
+      <Footerr/> */}
     </div>
     <div className={`fixed transition-opacity duration-700 ${showPreloader===false ? 'opacity-100' : 'opacity-0'} z-10 bottom-4 right-2`}>
       <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="Scroll to top">

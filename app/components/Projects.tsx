@@ -100,7 +100,7 @@ export default function ProjectsDisplay() {
   return (
     <div ref={sectionRef} className="w-full min-h-screen relative overflow-hidden z-0">
       {/* Background 'PROJECTS' text */}
-      <div className="absolute inset-0 flex flex-col justify-center items-center z-0 pointer-events-none select-none py-8 px-8">
+      <div className="absolute inset-0 flex flex-col justify-center items-center z-0 pointer-events-none select-none py-6 px-2 sm:py-8 sm:px-8">
         <div className='w-full flex flex-col'>
           <FlipLink>
             SELECTED WORKS
@@ -113,13 +113,15 @@ export default function ProjectsDisplay() {
 
       {/* Card Container */}
       <div ref={cardsContainerRef} className="w-full h-full absolute inset-0 flex items-center justify-center z-10">
-        <div className="relative w-full max-w-5xl" style={{ height: '450px' }}>
+        <div className="relative w-full max-w-5xl mx-auto" style={{ height: '450px'}}>
           {projects.map((project, index) => (
             <Link key={project.id} href={`/projects/${project.id}`} className="block">
               <div
-                className={`project-card absolute w-full rounded-3xl shadow-xl overflow-hidden border-1 border-black`}
+                className={`project-card absolute w-full rounded-2xl sm:rounded-3xl shadow-xl overflow-hidden border border-black`}
                 style={{
-                  height: '450px',
+                  height: undefined,
+                  minHeight: '320px',
+                  maxHeight: '90vh',
                   top: '0px',
                   left: '0px',
                   zIndex: index + 1,
@@ -132,8 +134,7 @@ export default function ProjectsDisplay() {
                   {/* <Image
                     src={project.images[0]}
                     alt={`${project.title} background`}
-                    width={1920}
-                    height={1080}
+                    fill
                     className="object-cover w-full h-full"
                   /> */}
                   {/* Enhanced dark overlay for better text readability */}
@@ -142,44 +143,44 @@ export default function ProjectsDisplay() {
                 </div>
 
                 {/* Content */}
-                <div className="relative z-10 p-6 h-full flex flex-col">
-                  <div className="flex w-full justify-between items-center mb-4">
+                <div className="relative z-10 p-3 sm:p-6 h-full flex flex-col">
+                  <div className="flex flex-col sm:flex-row w-full justify-between items-start sm:items-center mb-2 sm:mb-4 gap-2 sm:gap-0">
                     <div className='flex flex-row'>
-                      <div className="px-4 flex items-center justify-center overflow-hidden">
-                        <h1 className='text-5xl font-benzin text-black'>{project.no}</h1>
+                      <div className="px-2 sm:px-4 flex items-center justify-center overflow-hidden">
+                        <h1 className='text-3xl sm:text-5xl font-benzin text-black'>{project.no}</h1>
                       </div>
-                      <div className="ml-4">
-                        <h2 className="text-2xl font-bold font-benzin text-black">{project.title}</h2>
-                        <p className="text-black font-mont text-opacity-95 text-sm">{project.subtitle}</p>
+                      <div className="ml-2 sm:ml-4">
+                        <h2 className="text-lg sm:text-2xl font-bold font-benzin text-black">{project.title}</h2>
+                        <p className="text-black font-mont text-opacity-95 text-xs sm:text-sm">{project.subtitle}</p>
                       </div>
                     </div>
-                    <div className="backdrop-blur-sm rounded-full border-4 border-blue-900">
+                    <div className="backdrop-blur-sm rounded-full border-2 sm:border-4 border-blue-900 mt-2 sm:mt-0">
                       <Image
                         src={project.logo}
                         alt={project.title}
-                        width={1920}
-                        height={1080}
-                        className='w-12 h-12 rounded-full'
+                        width={96}
+                        height={96}
+                        className='w-8 h-8 sm:w-12 sm:h-12 rounded-full'
                       />
                     </div>
                   </div>
 
                   {/* Technologies */}
-                  <div className="flex flex-wrap gap-2 mb-6">
+                  <div className="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-6">
                     {project.technologies.slice(0, 3).map((tech, i) => (
-                      <span key={i} className="bg-black/70 backdrop-blur-sm text-white px-3 font-mont py-1.5 rounded-full text-xs font-medium border border-white/20">
+                      <span key={i} className="bg-black/70 backdrop-blur-sm text-white px-2 sm:px-3 font-mont py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-medium border border-white/20">
                         {tech}
                       </span>
                     ))}
                     {project.technologies.length > 3 && (
-                      <span className="bg-black/40 backdrop-blur-sm text-white px-3 py-1.5 rounded-full text-xs font-medium border border-white/20">
+                      <span className="bg-black/40 backdrop-blur-sm text-white px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-medium border border-white/20">
                         +{project.technologies.length - 3}
                       </span>
                     )}
                   </div>
 
                   {/* Bento Grid Image Gallery */}
-                  <div className="bento-grid grid grid-cols-2 gap-2 h-72">
+                  <div className="bento-grid grid grid-cols-2 gap-1 sm:gap-2 h-40 sm:h-72">
                     {project.images.slice(0, Math.min(3, project.images.length)).map((img, i) => {
                       let gridClass = "";
                       if (i === 0) gridClass = "col-span-1 row-span-2";
@@ -188,14 +189,14 @@ export default function ProjectsDisplay() {
                       return (
                         <div
                           key={i}
-                          className={`bento-item ${gridClass} rounded-lg overflow-hidden bg-gray-800 relative`}
+                          className={`bento-item ${gridClass} rounded-md sm:rounded-lg overflow-hidden bg-gray-800 relative`}
                         >
-                          <div className="w-full h-full border-1 border-black/10">
+                          <div className="w-full h-full border border-black/10">
                             <Image
                               src={img}
                               alt={`${project.title} preview ${i + 1}`}
-                              width={1920}
-                              height={1080}
+                              width={600}
+                              height={400}
                               className="object-cover w-full h-full"
                             />
                           </div>
@@ -211,7 +212,7 @@ export default function ProjectsDisplay() {
       </div>
 
       {/* Spacer */}
-      <div className="h-screen" />
+      <div className="h-32 sm:h-screen" />
     </div>
   );
 }

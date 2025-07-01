@@ -65,12 +65,12 @@ export const Services = () => {
         <div className='pb-12'>
             <FlipLink>SERVICES</FlipLink>
         </div>
-    <div className="flex flex-row gap-6 max-w-7xl mx-auto w-full">
+    <div className="flex flex-col md:flex-row gap-6 max-w-7xl mx-auto w-full">
     <WobbleCard
-      containerClassName="col-span-1 lg:col-span-2 h-full bg-blue-700 min-h-[500px] lg:min-h-[300px]"
+      containerClassName="col-span-1 lg:col-span-2 h-20 bg-blue-700 min-h-[250px] lg:min-h-[300px]"
       className=""
     >
-      <div className="max-w-xs h-36">
+      <div className="max-w-xs h-20 md:h-36 lg:h-36 xl:h-36">
         <h2 className="text-left font-mont text-balance w-10 md:text-2xl lg:text-4xl font-semibold tracking-[-0.015em] text-white">
           Mobile Development
         </h2>
@@ -80,14 +80,14 @@ export const Services = () => {
         width={200}
         height={200}
         alt="linear demo image"
-        className="absolute -right-20 -bottom-50 grayscale filter object-contain rounded-2xl"
+        className="absolute -right-20 -bottom-50 md:-right-25 md:-bottom-55 grayscale filter object-contain rounded-2xl"
       />
     </WobbleCard>
     <WobbleCard
-      containerClassName="col-span-1 lg:col-span-2 h-full bg-blue-700 min-h-[500px] lg:min-h-[300px]"
+      containerClassName="col-span-1 lg:col-span-2 h-20 bg-blue-700 min-h-[250px] lg:min-h-[300px]"
       className=""
     >
-     <div className="max-w-xs h-36">
+     <div className="max-w-xs h-20 md:h-36 lg:h-36 xl:h-36">
         <h2 className="text-left font-mont text-balance w-10 md:text-2xl lg:text-4xl font-semibold tracking-[-0.015em] text-white">
           Web Development
         </h2>
@@ -97,14 +97,14 @@ export const Services = () => {
         width={500}
         height={500}
         alt="linear demo image"
-        className="absolute -right-64 -bottom-7 grayscale filter object-contain rounded-2xl"
+        className="absolute -bottom-5 -right-30 md:-right-64 md:-bottom-7 grayscale filter object-contain rounded-2xl"
       />
     </WobbleCard>
     <WobbleCard
-      containerClassName="col-span-1 lg:col-span-2 h-full bg-blue-700 min-h-[500px] lg:min-h-[300px]"
+      containerClassName="col-span-1 lg:col-span-2 h-20 bg-blue-700 min-h-[250px] lg:min-h-[300px]"
       className=""
     >
-      <div className="max-w-xs h-36">
+      <div className="max-w-xs h-20 md:h-36 lg:h-36 xl:h-36">
         <h2 className="text-left font-mont text-balance w-10 md:text-2xl lg:text-4xl font-semibold tracking-[-0.015em] text-white">
           Cloud Integrations
         </h2>
@@ -114,7 +114,7 @@ export const Services = () => {
         width={550}
         height={550}
         alt="linear demo image"
-        className="absolute -right-64 -bottom-7 grayscale filter object-contain rounded-2xl"
+        className="absolute -bottom-5 -right-30 md:-right-64 md:-bottom-7 grayscale filter object-contain rounded-2xl"
       />
     </WobbleCard>
   </div>
