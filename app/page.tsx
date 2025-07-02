@@ -56,6 +56,10 @@ const page = () => {
       <div id="services">
         <Services/>
       </div>
+      <div id="journey">
+        <Hackathon/>
+      </div>
+      <Footerr/>
       {/* <Hero/>
       <Myimage/>
       <div id="about">

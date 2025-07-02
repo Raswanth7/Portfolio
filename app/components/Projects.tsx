@@ -113,9 +113,9 @@ export default function ProjectsDisplay() {
 
       {/* Card Container */}
       <div ref={cardsContainerRef} className="w-full h-full absolute inset-0 flex items-center justify-center z-10">
-        <div className="relative w-full max-w-5xl mx-auto" style={{ height: '450px'}}>
+        <div className="relative w-full max-w-5xl mx-auto h-[350px] md:h-[450px]">
           {projects.map((project, index) => (
-            <Link key={project.id} href={`/projects/${project.id}`} className="block">
+            <Link key={project.id} target='_blank' href={`/projects/${project.id}`} className="block">
               <div
                 className={`project-card absolute w-full rounded-2xl sm:rounded-3xl shadow-xl overflow-hidden border border-black`}
                 style={{

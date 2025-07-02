@@ -105,7 +105,7 @@ const Navbar = ({ triggerDrawerScroll }: NavbarProps) => {
       {/* Right: Resume */}
       <div className='flex justify-end flex-1'>
         <Link href={'/docs/Resume.pdf'} target='_blank'>
-          <h1 className='text-xs sm:text-sm lg:text-base font-mont text-center cursor-pointer hover:text-blue-400 transition duration-300'>
+          <h1 className='text-xs sm:text-sm lg:text-base font-mont text-center cursor-pointer hover:text-blue-700 transition duration-300'>
             Resume
           </h1>
         </Link>

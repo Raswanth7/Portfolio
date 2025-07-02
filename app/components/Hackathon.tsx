@@ -31,13 +31,13 @@ const Hackathon = () => {
         <Link
           heading="ETH INDIA 2024"
           subheading="Held at Bangalore"
-          imgSrc="/imgs/random/5.jpg"
+          imgSrc="assets/journey/image.png"
           href="#"
         />
         <Link
           heading="UNFOLD 24"
           subheading="Held at Bangalore"
-          imgSrc="/imgs/random/10.jpg"
+          imgSrc="assets/journey/portfolio4.png"
           href="#"
         />
       </div>
