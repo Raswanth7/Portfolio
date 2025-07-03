@@ -14,7 +14,7 @@ export const Services = () => {
       className=""
     >
       <div className="max-w-xs h-20 md:h-36 lg:h-36 xl:h-36">
-        <h2 className="text-left font-mont text-balance w-10 md:text-2xl lg:text-4xl font-semibold tracking-[-0.015em] text-white">
+        <h2 className="text-left font-mont text-3xl w-10 md:text-2xl lg:text-4xl font-semibold tracking-[-0.015em] text-white">
           Mobile Development
         </h2>
       </div>
@@ -31,7 +31,7 @@ export const Services = () => {
       className=""
     >
      <div className="max-w-xs h-20 md:h-36 lg:h-36 xl:h-36">
-        <h2 className="text-left font-mont text-balance w-10 md:text-2xl lg:text-4xl font-semibold tracking-[-0.015em] text-white">
+        <h2 className="text-left font-mont text-3xl w-10 md:text-2xl lg:text-4xl font-semibold tracking-[-0.015em] text-white">
           Web Development
         </h2>
     </div>
@@ -48,7 +48,7 @@ export const Services = () => {
       className=""
     >
       <div className="max-w-xs h-20 md:h-36 lg:h-36 xl:h-36">
-        <h2 className="text-left font-mont text-balance w-10 md:text-2xl lg:text-4xl font-semibold tracking-[-0.015em] text-white">
+        <h2 className="text-left font-mont text-3xl w-10 md:text-2xl lg:text-4xl font-semibold tracking-[-0.015em] text-white">
           Cloud Integrations
         </h2>
       </div>
