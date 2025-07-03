@@ -1,7 +1,6 @@
 import { projects } from '../../components/projectsData';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaLink } from "react-icons/fa";
 import {
   Carousel,
   CarouselContent,
@@ -10,8 +9,9 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 
-export default function ProjectDetail({ params }: { params: { id: string } }) {
-  const project = projects.find(p => p.id === Number(params.id));
+export default async function ProjectDetail({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const project = projects.find(p => p.id === Number(id));
 
   if (!project) {
     return (

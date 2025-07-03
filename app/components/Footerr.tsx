@@ -18,7 +18,7 @@ export default function Footer() {
             {/* Left Section - Heading */}
             <div className='flex flex-col w-full lg:w-2/3 xl:w-3/4'>
               <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-mont font-bold text-black leading-tight'>
-                Let's Make It
+                Let&rsquo;s Make It
               </h1>
               <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-mont font-bold text-black leading-tight'>
                 Happen Together
@@ -28,15 +28,20 @@ export default function Footer() {
             {/* Right Section - CTA and Social */}
             <div className='flex flex-col gap-4 sm:gap-6 md:gap-8 lg:pt-8 lg:justify-end lg:w-1/3 xl:w-1/4'>
               <p className='text-sm sm:text-base md:text-lg lg:text-xl text-black font-mont leading-relaxed'>
-                Let's turn your ideas into smart, functional digital experiences.
+                Let&rsquo;s turn your ideas into smart, functional digital experiences.
               </p>
               
               {/* CTA Button */}
-              <div className='bg-black w-fit rounded-full lg:rounded-4xl self-start lg:self-auto'>
+              <Link
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=raswanthoff7@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className='bg-black w-fit rounded-full lg:rounded-4xl self-start lg:self-auto'
+              >
                 <h1 className='text-white font-semibold text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl px-4 py-2 sm:px-6 sm:py-3 md:p-4 whitespace-nowrap'>
                   START A CONVERSATION
                 </h1>
-              </div>
+              </Link>
               
               {/* Social Links */}
               <div className='flex flex-row gap-4 sm:gap-6 md:gap-8 lg:px-4'>

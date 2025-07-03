@@ -20,10 +20,10 @@ const About = () => {
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
         >
           I design and build thoughtful, modern web experiences.
-          Clean code, elegant interfaces, and seamless functionality that's my approach.
+          Clean code, elegant interfaces, and seamless functionality that&rsquo;s my approach.
           From intuitive frontends to cloud-powered backends, every detail matters.
           I believe great digital products feel effortless and reliable.
-          Let's craft something exceptional, together.
+          Let&rsquo;s craft something exceptional, together.
         </motion.h1>
       </div>
     </div>

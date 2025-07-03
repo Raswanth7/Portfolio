@@ -1,11 +1,7 @@
 'use client'
 import Image from 'next/image'
-import React, { useState, useEffect, useRef } from 'react'
-import { HiMenuAlt2 } from "react-icons/hi";
-import { HiDownload } from "react-icons/hi";
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useEffect} from 'react'
 import { IoCloseOutline } from "react-icons/io5";
-import { PiDotsThreeCircleVerticalLight } from "react-icons/pi";
 import {
   CustomDrawer,
   CustomDrawerContent,
@@ -13,7 +9,6 @@ import {
   CustomDrawerFooter,
   CustomDrawerTitle,
 } from './CustomDrawer';
-import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
 interface NavbarProps {
@@ -21,13 +16,13 @@ interface NavbarProps {
 }
 
 const Navbar = ({ triggerDrawerScroll }: NavbarProps) => {
-  const [showText, setShowText] = useState(false);
-  const [drawerOpen, setDrawerOpen] = useState(false);
-  const triggerRef = useRef<HTMLButtonElement>(null);
+  // const [showText, setShowText] = useState(false);
+  // const [drawerOpen, setDrawerOpen] = useState(false);
+  // const triggerRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setShowText((prev) => !prev);
+      // setShowText((prev) => !prev);
     }, 2000);
     return () => clearInterval(interval);
   }, []);

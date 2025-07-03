@@ -1,24 +1,21 @@
 'use client'
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { TextPlugin } from 'gsap/TextPlugin';
 import Image from 'next/image';
 import Button from './MouseButton';
 import FlipLink from './Fliptext';
-import { projects, Project } from './projectsData';
+import { projects } from './projectsData';
 import Link from 'next/link';
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 export default function ProjectsDisplay() {
-  const headerRef = useRef<HTMLDivElement>(null);
   const cardsContainerRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
   const projectsTitleRef = useRef<HTMLHeadingElement>(null);
   const scrollTriggersRef = useRef<ScrollTrigger[]>([]);
-
-  const [hoveredImageIndex, setHoveredImageIndex] = useState<number | null>(null);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;

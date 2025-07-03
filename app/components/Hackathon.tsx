@@ -13,32 +13,27 @@ const Hackathon = () => {
         <Link
           heading="Spectrum 25"
           subheading="VIT Hackathon"
-          imgSrc="assets/journey/portfolio1.jpg"
-          href="#"
+          imgSrc="assets/journey/portfolio1.JPG"
         />
         <Link
           heading="HackVerse 25"
           subheading="Texus25 Hackathon"
           imgSrc="assets/journey/portfolio2.jpg"
-          href="#"
         />
         <Link
           heading="Texus 25"
           subheading="Website and Non Technical Team Head"
           imgSrc="assets/journey/portfolio3.jpg"
-          href="#"
         />
         <Link
           heading="ETH INDIA 2024"
           subheading="Held at Bangalore"
           imgSrc="assets/journey/image.png"
-          href="#"
         />
         <Link
           heading="UNFOLD 24"
           subheading="Held at Bangalore"
           imgSrc="assets/journey/portfolio4.png"
-          href="#"
         />
       </div>
     </section>
@@ -48,8 +43,8 @@ const Hackathon = () => {
 
 export default Hackathon;
 
-const Link = ({ heading, imgSrc, subheading, href }) => {
-    const ref = useRef(null);
+const Link = ({ heading, imgSrc, subheading }: { heading: string; imgSrc: string; subheading: string }) => {
+    const ref = useRef<HTMLAnchorElement | null>(null);
   
     const x = useMotionValue(0);
     const y = useMotionValue(0);
@@ -60,8 +55,8 @@ const Link = ({ heading, imgSrc, subheading, href }) => {
     const top = useTransform(mouseYSpring, [0.5, -0.5], ["40%", "60%"]);
     const left = useTransform(mouseXSpring, [0.5, -0.5], ["60%", "70%"]);
   
-    const handleMouseMove = (e :any) => {
-      const rect = ref.current.getBoundingClientRect();
+    const handleMouseMove = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+      const rect = ref.current!.getBoundingClientRect();
   
       const width = rect.width;
       const height = rect.height;
@@ -78,7 +73,6 @@ const Link = ({ heading, imgSrc, subheading, href }) => {
   
     return (
       <motion.a
-        // href={href}
         ref={ref}
         onMouseMove={handleMouseMove}
         initial="initial"
@@ -98,7 +92,7 @@ const Link = ({ heading, imgSrc, subheading, href }) => {
             }}
             className="relative z-10 block text-4xl font-bold text-neutral-500 transition-colors duration-500 group-hover:text-neutral-50 md:text-6xl"
           >
-            {heading.split("").map((l:any, i:any) => (
+            {heading.split("").map((l: string, i: number) => (
               <motion.span
                 variants={{
                   initial: { x: 0 },
@@ -134,22 +128,6 @@ const Link = ({ heading, imgSrc, subheading, href }) => {
           alt={`Image representing a link for ${heading}`}
         />
   
-        {/* <motion.div
-          variants={{
-            initial: {
-              x: "25%",
-              opacity: 0,
-            },
-            whileHover: {
-              x: "0%",
-              opacity: 1,
-            },
-          }}
-          transition={{ type: "spring" }}
-          className="relative z-10 p-4"
-        >
-          {/* <FiArrowRight className="text-5xl text-neutral-50" /> */}
-
       </motion.a>
     );
   };

@@ -1,65 +1,8 @@
 import React from 'react'
 import { WobbleCard } from '@/components/ui/wobble-card'
-import { div } from 'framer-motion/client'
 import FlipLink from './Fliptext'
-import { Marquee } from '@/components/magicui/marquee'
-import Image from 'next/image'
 
 export const Services = () => {
-  interface Skill {
-    name: string;
-    level: 'Expert' | 'Advanced' | 'Intermediate';
-    icon: string;
-  }
-
-  interface Category {
-    title: string;
-    description: string;
-    skills: Skill[];
-    symbol: string;
-  }
-
-  const categories: Record<string, Category> = {
-    frontend: {
-      title: "Frontend",
-      symbol: '</>',
-      description: "Creating responsive, intuitive interfaces with modern frameworks and tools.",
-      skills: [
-        { name: "React", level: "Expert", icon: "react.png" },
-        { name: "React Native", level: "Expert", icon: "react.png" },
-        { name: "Next.js", level: "Advanced", icon: "nextjs.png" },
-        { name: "JavaScript", level: "Expert", icon: "js.png" },
-        { name: "TypeScript", level: "Advanced", icon: "Ts.png" },
-        { name: "HTML", level: "Expert", icon: "html.png" },
-        { name: "CSS", level: "Expert", icon: "css3.png" },
-        { name: "Tailwind CSS", level: "Advanced", icon: "tailwind.png" }
-      ]
-    },
-    backend: {
-      title: "Backend",
-      symbol: '{ }',
-      description: "Building robust, scalable server-side solutions and APIs.",
-      skills: [
-        { name: "Node.js", level: "Advanced", icon: "node.png" },
-        { name: "Express", level: "Advanced", icon: "express.png" },
-        { name: "MongoDB", level: "Intermediate", icon: "mongodb.png" },
-        { name: "PostgreSQL", level: "Intermediate", icon: "sql.png" },
-        { name: "Supabase", level: "Advanced", icon: "supabase.png" },
-      ]
-    },
-    tools: {
-      title: "Tools & Methods",
-      symbol: '#',
-      description: "Leveraging industry-standard practices and workflows for efficient development.",
-      skills: [
-        { name: "Git/GitHub", level: "Expert", icon: "git.png" },
-        { name: "Figma", level: "Advanced", icon: "figma.png" },
-        { name: "PuTTY", level: "Intermediate", icon: "putty.png" },
-        { name: "AWS", level: "Intermediate", icon: "aws.png" },
-        { name: "Vercel", level: "Advanced", icon: "vercel.png" }
-      ]
-    }
-  };
   return (
     <div className='px-8 py-10 pb-20'>
         <div className='pb-12'>
@@ -75,13 +18,13 @@ export const Services = () => {
           Mobile Development
         </h2>
       </div>
-      <img
+      {/* <img
         src="/assets/Mobileframe.png"
         width={200}
         height={200}
         alt="linear demo image"
         className="absolute -right-20 -bottom-50 md:-right-25 md:-bottom-55 grayscale filter object-contain rounded-2xl"
-      />
+      /> */}
     </WobbleCard>
     <WobbleCard
       containerClassName="col-span-1 lg:col-span-2 h-20 bg-blue-700 min-h-[250px] lg:min-h-[300px]"
@@ -92,13 +35,13 @@ export const Services = () => {
           Web Development
         </h2>
     </div>
-      <img
+      {/* <img
         src="/assets/laptop.png"
         width={500}
         height={500}
         alt="linear demo image"
         className="absolute -bottom-5 -right-30 md:-right-64 md:-bottom-7 grayscale filter object-contain rounded-2xl"
-      />
+      /> */}
     </WobbleCard>
     <WobbleCard
       containerClassName="col-span-1 lg:col-span-2 h-20 bg-blue-700 min-h-[250px] lg:min-h-[300px]"
@@ -109,13 +52,13 @@ export const Services = () => {
           Cloud Integrations
         </h2>
       </div>
-      <img
+      {/* <img
         src="/assets/cloudd.png"
         width={550}
         height={550}
         alt="linear demo image"
         className="absolute -bottom-5 -right-30 md:-right-64 md:-bottom-7 grayscale filter object-contain rounded-2xl"
-      />
+      /> */}
     </WobbleCard>
   </div>
   {/* <div className="space-y-4 mt-10">

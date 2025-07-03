@@ -6,12 +6,12 @@ import About from './components/About'
 import ProjectsDisplay from './components/Projects'
 import { Services } from './components/Services'
 import Hackathon from './components/Hackathon'
-import PreviewStickyFooter from './components/Footer'
 import Footerr from './components/Footerr'
 import Navbar from './components/Navbar'
 import { FaArrowCircleUp } from "react-icons/fa";
 import Preloader from './components/Preloader'
-const page = () => {
+
+const Page = () => {
   const [showPreloader, setShowPreloader] = useState(true);
   const [isDrawerScrolling, setIsDrawerScrolling] = useState(false);
   const blurTimeout = useRef<NodeJS.Timeout | null>(null);
@@ -85,4 +85,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

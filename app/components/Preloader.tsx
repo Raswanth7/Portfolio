@@ -15,7 +15,6 @@ const Preloader: React.FC<PreloaderProps> = ({
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
-  const [showDots, setShowDots] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
   const [slideUp, setSlideUp] = useState(false);
   const preloaderRef = useRef<HTMLDivElement>(null);
@@ -55,10 +54,7 @@ const Preloader: React.FC<PreloaderProps> = ({
 
       return () => clearTimeout(timer);
     } else {
-      // Show loading dots
-      setShowDots(true);
-      
-      // Start slide up animation after showing dots
+      // Start slide up animation after greetings
       const slideTimer = setTimeout(() => {
         setSlideUp(true);
         

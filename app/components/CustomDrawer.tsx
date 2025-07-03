@@ -108,8 +108,6 @@ function CustomDrawerDescription({ className = "", children }: { className?: str
 function CustomDrawer({
   trigger,
   children,
-  direction = "right",
-  className = "",
 }: {
   trigger: ReactNode;
   children: (closeDrawer: () => void, open: boolean) => ReactNode;
